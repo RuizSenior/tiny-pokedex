@@ -21,7 +21,7 @@ async function fetchPosts(event) {
     event.preventDefault(); 
 
     try {
-        const pokemonName = document.getElementById("pokemonInput").value.toLowerCase();
+        const pokemonName = document.getElementById("pokemon-search").value.toLowerCase();
         let pokemonData;
 
         if (pokemonName) {
@@ -61,10 +61,10 @@ function renderPokemonList(pokemonList) {
         abilities.textContent = `Habilidades: ${pokemon.abilities.map(ability => ability.ability.name).join(", ")}`;
 
         const button = document.createElement("button");
-        button.textContent = "Más info";
+        button.textContent = "More info";
         button.addEventListener("click", () => {
             const url = `https://www.pokemon.com/us/pokedex/${pokemon.name.toLowerCase()}`;
-            window.open(url, "_blank"); 
+            window.open(url, "_blank");
         });
 
         postContainer.append(title, sprite, abilities, button);
@@ -72,7 +72,7 @@ function renderPokemonList(pokemonList) {
     }
 }
 
-const postList = document.querySelector("#posts-container");
-const sendButton = document.getElementById("sendButton");
+const postList = document.getElementById("pokemon-card");
+const sendButton = document.getElementById("search-button");
 
 sendButton.addEventListener("click", fetchPosts);

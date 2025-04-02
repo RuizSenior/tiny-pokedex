@@ -9,21 +9,27 @@
 </head>
 
 <body>
-    <section id="new-post">
-        <form>
-            <div class="form-control">
-                <label for="pokemonInput">Get a Pokemon</label>
-                <input type="text" id="pokemonInput" placeholder="Select a Pokémon" />
+    <header>
+        <img class="header__img" src="https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png" alt="">
+    </header>
+    <div class="container">
+        <section class="search">
+            <div class="search__box">
+                <label for="pokemon-search" class="search__label">Name or ID of the Pokémon (If left empty, it will fetch 100 Pokémon)</label>
+                <input type="text" class="search__input" id="pokemon-search" placeholder="Search for a Pokémon">
+                <button class="search__button" id="search-button">Search Pokémon</button>
             </div>
-            <button id="sendButton">GET Content</button>
-        </form>
-    </section>
+        </section>
 
-    <section id="available-posts">
-        <section id="posts-container" class="posts"></section>
-    </section>
+        <section class="result">
+            <div class="result__card" id="pokemon-card">
 
-    <script src="app.js"></script> 
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
 </body>
+
 
 </html>
